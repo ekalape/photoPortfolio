@@ -1,78 +1,108 @@
-const video = document.querySelector(".custom_video");
-const videoProgressBar = document.querySelector(".video_active");
-const volumeProgressBar = document.querySelector(".volume_active");
-const playPause = document.querySelectorAll(".main_control");
-const volBtn = document.querySelector(".volume_img");
-const playBtnOnVid = document.querySelector(".onVideo");
+const gallery_container = document.querySelector(".img_container");
+const input_text = document.querySelector(".input");
+const cancel_btn = document.querySelector(".cancel");
+const search_btn = document.querySelector(".search_btn");
+const more = document.querySelector(".more");
+const bigImage = document.querySelector(".big_image");
 
-let isPlaying = false;
-let isVolume = true;
-let v = volumeProgressBar.value;
+let word = "morning";
+let address = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f8bc164bb2384a8dab17f91fbbe83402&tags=${word}&format=json&nojsoncallback=1`;
 
-video.addEventListener("timeupdate", function () {
-  let duration = video.duration;
-  let current = video.currentTime;
-  videoProgressBar.value = (current / duration) * 100;
-});
+function createCard(arr) {
+  let url = `https://live.staticflickr.com/${arr[0]}/${arr[1]}_${arr[2]}_w.jpg`;
+  const card = document.createElement("div");
+  const img = document.createElement("img");
+  img.alt = "image";
+  img.src = url;
+  card.classList.add("divCard");
+  img.classList.add("card");
+  card.append(img);
+  gallery_container.append(card);
 
-videoProgressBar.addEventListener("click", function (e) {
-  let len = this.offsetWidth;
-  let x = e.offsetX;
-  this.value = (x / len) * 100;
-  if (isPlaying) {
-    video.pause();
-  }
-  video.currentTime = (video.duration * x) / len;
-  if (isPlaying) {
-    video.play();
-  }
-});
+  card.addEventListener("click", () => {
+    let bigUrl = `https://live.staticflickr.com/${arr[0]}/${arr[1]}_${arr[2]}_b.jpg`;
+    document.querySelector(".image").style.backgroundImage = `url(${bigUrl})`;
+    bigImage.style.display = "flex";
+    bigImage.onclick = () => {
+      bigImage.style.display = "none";
+    };
+  });
+}
 
-playPause.forEach((btn) => btn.addEventListener("click", toggleControl));
-video.onclick = toggleControl;
-playBtnOnVid.onclick = toggleControl;
+function fillGallery(data, num) {
+  let quantity = data.photos.photo.length;
+  if (num > quantity) {
+    more.style.visibility = "hidden";
+  } else {
+    gallery_container.innerHTML = "";
+    for (let i = num - 30; i < num && i < quantity; i++) {
+      let serverId = data.photos.photo[i].server;
+      let id = data.photos.photo[i].id;
+      let secret = data.photos.photo[i].secret;
+      let arr = [serverId, id, secret];
+      createCard(arr);
+      if (quantity > num) {
+        document.addEventListener("scroll", function (e) {
+          let documentHeight = document.body.scrollHeight;
+          let currentScroll = window.scrollY + window.innerHeight;
 
-function toggleControl() {
-  if (this.classList.contains("play_pause")) {
-    if (isPlaying) {
-      video.pause();
-      playBtnOnVid.classList.remove("transparent");
-      document.querySelector(".img_onVid").src = "assets/play_onVid.png";
-      isPlaying = false;
-      document.querySelector(".play_pause_img").src = "assets/play_btn.png";
-    } else {
-      video.play();
-      playBtnOnVid.classList.add("transparent");
-
-      document.querySelector(".img_onVid").src = "assets/pause_onVid.png";
-      isPlaying = true;
-      document.querySelector(".play_pause_img").src = "assets/pause_btn.png";
-    }
-  }
-
-  if (this.classList.contains("volume")) {
-    if (isVolume) {
-      video.volume = 0;
-      volumeProgressBar.value = 0;
-      isVolume = false;
-      volBtn.src = "assets/volume_mute.png";
-    } else {
-      isVolume = true;
-      volumeProgressBar.value = v;
-      video.volume = v == 0 ? (v + 2) / 100 : v / 100;
-      volBtn.src = "assets/volume_btn.png";
+          let modifier = 20;
+          /*        console.log(documentHeight);
+        console.log(currentScroll); */
+          if (currentScroll + modifier > documentHeight && quantity > num) {
+            /*   console.log("You are at the bottom!"); */
+            more.style.visibility = "visible";
+            more.onclick = () => {
+              num += 30;
+              window.scrollTo(0, 0);
+              fillGallery(data, num);
+              console.log(`num = ${num} quantity = ${quantity}`);
+            };
+          } else {
+            more.style.visibility = "hidden";
+          }
+        });
+      }
     }
   }
 }
-
-volumeProgressBar.addEventListener("input", function (e) {
-  v = e.target.value;
-  video.volume = v / 100;
-  if (v == 0) {
-    isVolume = false;
-    volBtn.src = "assets/volume_mute.png";
+search_btn.addEventListener("click", startSearch);
+input_text.addEventListener("keydown", (e) => {
+  if (e.keyCode === 13) startSearch();
+});
+input_text.addEventListener("input", (e) => {
+  if (e.target.value.length > 0) {
+    cancel_btn.style.visibility = "visible";
   } else {
-    isVolume = true;
-    volBtn.src = "assets/volume_btn.png";
+    cancel_btn.style.visibility = "hidden";
   }
 });
+
+cancel_btn.addEventListener("click", () => {
+  input_text.value = "";
+  cancel_btn.style.visibility = "hidden";
+  input_text.focus();
+});
+
+async function getImages(value) {
+  address = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f8bc164bb2384a8dab17f91fbbe83402&tags=${value}&per_page=450&sort=relevance&format=json&nojsoncallback=1`;
+
+  console.log(address);
+  try {
+    const responce = await fetch(address);
+    const data = await responce.json();
+    console.log(data);
+    fillGallery(data, 30);
+  } catch (error) {
+    console.log(error);
+    alert("Not a valid search word!");
+    input_text.value = "";
+  }
+}
+function startSearch() {
+  if (input_text.value.length > 0) {
+    let value = input_text.value.split(" ").join(",");
+    getImages(value);
+  }
+}
+getImages(word);
