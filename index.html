@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Custom Video Player</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon1.ico" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="author" content="Ekalape" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1 class="page_title">CUSTOM VIDEO PLAYER</h1>
+    </header>
+    <main>
+      <div class="video_container">
+<div class="border_container">
+        <video class="custom_video play_pause" src="assets/video.mp4">
+         
+        </video>
+        <button class="onVideo play_pause">
+          <img src="assets/play_onVid.png" alt="" class="img_onVid">
+        </button>
+      </div>
+        <div class="panel">
+          <button class="main_control play_pause">
+            <img src="assets/play_btn.png" alt="Play" class="play_pause_img" />
+         
+          </button>
+          
+          <div class="progress video_progress">
+            <progress class="video_active" value ="0" max="100"></progress>
+          </div>
+          <button class="main_control volume">
+            <img src="assets/volume_btn.png" alt="Volume" class="volume_img" />
+          </button>
+          <div class="progress volume_progress">
+            <input type="range" min="0" max ="100" class="volume_active" value="60"></input>
+         
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer_container">
+        <div class="left_footer"> <span>©</span>
+          <span>2022</span>
+          <a href="https://github.com/ekalape/rsschool-cv">GitHub</a></div>
+       
+        <a href="https://rs.school/js/"><img class="rss_link" src="assets/rs_school_js.svg" alt="Rsschool"></a>
+
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
