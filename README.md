@@ -1,3 +1,3 @@
-# ekalape-JSFEPRESCHOOL
+# ekalape
 
-Private repository for @ekalape
+Custom Image Gallery project
