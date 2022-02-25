@@ -1,64 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Image gallery</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <title>Memory Game: Flowers</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <meta name="author" content="Ekalape" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Comfortaa:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/favicon.png" />
+    <meta name="description" content="Memory game with flower cards" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto+Slab&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="big_image">
-      <div class="image"></div>
-    </div>
-    <div class="container">
-      <header>
-        <div class="header_container">
-          <div class="logoname">
-            <img src="assets/pic.png" class="logo" alt="Logo" />
-            <h2 class="name">Image gallery</h2>
-          </div>
-          <div class="right_side">
-            <span>Search:</span>
-            <div class="panel">
-              <input
-                type="text"
-                class="input"
-                placeholder="Enter smth"
-                autofocus
-                autocomplete="off"
-              />
-              <button class="cancel"></button>
-              <button class="search_btn"></button>
-            </div>
-          </div>
-        </div>
-      </header>
-      <main>
-        <div class="img_container"></div>
-      </main>
+    <header>
 
-      <footer>
-        <div class="left_side">
-          <span> © 2022 </span>
-          <a href="https://github.com/ekalape/rsschool-cv">GitHub</a>
+      <div class="container_header">
+        <h1>Memory Game</h1>
+        <div class="right_header">
+        <button class="newGame_btn play_again control_btn">New game</button>
+        
+        <button class="score_btn control_btn">Score</button>
+        <button class="theme_btn control_btn" data-theme="light">Dark theme</button>
+      </div>
+
+        
+      </div>
+      <!-- <button class="common_btn temp convex">Control</button> -->
+    </header>
+    <main>
+
+      <div class="game_container">
+        <div class="card_container convex" data-name="star">
+          <img class="card_front" src="images/star.png" alt="Star flower"></img>
+          <img class="card_back"src="images/back.png" alt="Backside"></img>
         </div>
-        <p class="more">More...</p>
-        <div class="rss">
-          <a href="https://rs.school/js/"
-            ><img class="rss_link" src="assets/rs_school_js.svg" alt="Rsschool"
-          /></a>
-        </div>
-      </footer>
-    </div>
+
+        <div class="card_container convex" data-name="rose">
+            <img class="card_front" src="images/rose.png" alt="Rose flower"></img>
+            <img class="card_back"src="images/back.png" alt="Backside"></img>
+          </div>
+
+          <div class="card_container convex" data-name="pion">
+            <img class="card_front" src="images/pion.png" alt="Pion flower"></img>
+            <img class="card_back"src="images/back.png" alt="Backside"></img>
+          </div>
+
+          <div class="card_container convex" data-name="lilia">
+            <img class="card_front" src="images/lilia.png" alt="Lilia flower"></img>
+            <img class="card_back"src="images/back.png" alt="Backside"></img>
+          </div>
+
+          <div class="card_container convex" data-name="iris">
+            <img class="card_front" src="images/iris.png" alt="Iris flower"></img>
+            <img class="card_back"src="images/back.png" alt="Backside"></img>
+          </div>
+
+          <div class="card_container convex" data-name="hibiscus">
+            <img class="card_front" src="images/hibiscus.png" alt="hibiscus flower"></img>
+            <img class="card_back"src="images/back.png" alt="Backside"></img>
+          </div>
+          <div class="card_container convex" data-name="star">
+            <img class="card_front" src="images/star.png" alt="Star flower"></img>
+            <img class="card_back"src="images/back.png" alt="Backside"></img>
+          </div>
+  
+            <div class="card_container convex" data-name="rose">
+              <img class="card_front" src="images/rose.png" alt="Rose flower"></img>
+              <img class="card_back"src="images/back.png" alt="Backside"></img>
+            </div>
+  
+            <div class="card_container convex" data-name="pion">
+              <img class="card_front" src="images/pion.png" alt="Pion flower"></img>
+              <img class="card_back"src="images/back.png" alt="Backside"></img>
+            </div>
+  
+            <div class="card_container convex" data-name="lilia">
+              <img class="card_front" src="images/lilia.png" alt="Lilia flower"></img>
+              <img class="card_back"src="images/back.png" alt="Backside"></img>
+            </div>
+  
+            <div class="card_container convex" data-name="iris">
+              <img class="card_front" src="images/iris.png" alt="Iris flower"></img>
+              <img class="card_back"src="images/back.png" alt="Backside"></img>
+            </div>
+  
+            <div class="card_container convex" data-name="hibiscus">
+              <img class="card_front" src="images/hibiscus.png" alt="hibiscus flower"></img>
+              <img class="card_back"src="images/back.png" alt="Backside"></img>
+            </div>
+
+            <div class="win_container convex">
+              <div class="congrats">
+                <img src="assets/congrats_flowr.png" alt="Congratulation!">
+                <p>Done!</p>
+                <p class="result"></p>
+                <p>Do you want to play again?</p>
+              </div>
+              <div class="continue_btns">
+              <button class="play_again control_btn ">Play again</button>
+              <button class="no control_btn cancel_btn">Cancel</button>
+              </div>
+              
+            </div>
+            <div class="score_container convex">
+              <p>Latest achievements</p>
+              <ul class="ach_list">
+                
+              </ul>
+              
+              <button class="no control_btn">Close</button>
+            </div>
+
+
+
+      </div>          
+     
+      
+    </main>
+    <footer>
+      <div class="left_footer">
+        <span>2022 ©</span>
+        <a href="https://github.com/ekalape/rsschool-cv" class="github_link"
+          >GitHub</a
+        >
+      </div>
+      <a href="https://rs.school/js-stage0/" class="rss_link"
+        ><img src="assets/rs_school_js.svg" alt="Rsschool"
+      /></a>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

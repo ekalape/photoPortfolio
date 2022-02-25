@@ -1,3 +1,3 @@
 # ekalape
 
-Custom Image Gallery project
+Memory Card Game custom realization
