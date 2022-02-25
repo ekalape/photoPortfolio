@@ -1,3 +1,3 @@
-# ekalape
+# ekalape-JSFEPRESCHOOL
 
-Memory Card Game custom realization
+Private repository for @ekalape

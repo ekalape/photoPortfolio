@@ -1,135 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Memory Game: Flowers</title>
+    <title>Portfolio</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Ekalape" />
+
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="assets/favicon.png" />
-    <meta name="description" content="Memory game with flower cards" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
+    <div class="body">
+      <div class="hero-bg-container"></div>
+      <div class="black-cover"></div>
+      <header>
+        <button class="fotocamera">
+          <img src="assets/logo1.svg" alt="logo fotocamera" data-icon="logo" />
+        </button>
 
-      <div class="container_header">
-        <h1>Memory Game</h1>
-        <div class="right_header">
-        <button class="newGame_btn play_again control_btn">New game</button>
-        
-        <button class="score_btn control_btn">Score</button>
-        <button class="theme_btn control_btn" data-theme="light">Dark theme</button>
-      </div>
-
-        
-      </div>
-      <!-- <button class="common_btn temp convex">Control</button> -->
-    </header>
-    <main>
-
-      <div class="game_container">
-        <div class="card_container convex" data-name="star">
-          <img class="card_front" src="images/star.png" alt="Star flower"></img>
-          <img class="card_back"src="images/back.png" alt="Backside"></img>
+        <nav class="upper-nav">
+          <ul>
+            <li><a href="#skills" data-i18n="skills"> Skills</a></li>
+            <li><a href="#portfolio" data-i18n="portfolio">Portfolio</a></li>
+            <li><a href="#video" data-i18n="video">Video</a></li>
+            <li><a href="#price" data-i18n="price">Price</a></li>
+            <li><a href="#contacts" data-i18n="contacts">Contacts</a></li>
+          </ul>
+        </nav>
+        <div class="switch-lang">
+          <span class="lang actual" id="en">en</span>
+          <span>/</span>
+          <span class="lang" id="ru">ru</span>
         </div>
 
-        <div class="card_container convex" data-name="rose">
-            <img class="card_front" src="images/rose.png" alt="Rose flower"></img>
-            <img class="card_back"src="images/back.png" alt="Backside"></img>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <div class="switch-theme" data-theme="dark">
+          <img class="theme" src="assets/theme_light.svg" alt="" />
+        </div>
+        <div class="tablet-menu">
+          <nav class="small-nav">
+            <ul>
+              <li>
+                <a href="#skills" class="close" data-i18n="skills"> Skills</a>
+              </li>
+              <li>
+                <a href="#portfolio" class="close" data-i18n="portfolio"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a href="#video" class="close" data-i18n="video">Video</a>
+              </li>
+              <li>
+                <a href="#price" class="close" data-i18n="price">Price</a>
+              </li>
+              <li>
+                <a href="#contacts" class="close" data-i18n="contacts"
+                  >Contacts</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="section hero">
+          <div class="hero-content">
+            <h1 data-i18n="hero-title">Alexa Rise</h1>
+            <p data-i18n="hero-text">
+              Save sincere emotions, romantic feelings and happy moments of life
+              together with professional photographer Alexa Rise
+            </p>
+            <button class="golden pulse white" data-i18n="hire">Hire me</button>
           </div>
-
-          <div class="card_container convex" data-name="pion">
-            <img class="card_front" src="images/pion.png" alt="Pion flower"></img>
-            <img class="card_back"src="images/back.png" alt="Backside"></img>
+        </section>
+        <section class="section skills" id="skills">
+          <div class="section-title">
+            <h2 class="title" data-i18n="skills">Skills</h2>
           </div>
+          <div class="content-container">
+            <div class="skill-item">
+              <img src="assets/camera1.svg" alt="camera icon" />
+              <p class="skill-title" data-i18n="skill-title-1">
+                Digital photography
+              </p>
+              <p data-i18n="skill-text-1">
+                High-quality photos in the studio and on the nature
+              </p>
+            </div>
 
-          <div class="card_container convex" data-name="lilia">
-            <img class="card_front" src="images/lilia.png" alt="Lilia flower"></img>
-            <img class="card_back"src="images/back.png" alt="Backside"></img>
+            <div class="skill-item">
+              <img src="assets/video1.svg" alt="video icon" />
+              <p class="skill-title" data-i18n="skill-title-2">
+                Video shooting
+              </p>
+              <p data-i18n="skill-text-2">
+                Capture your moments so that they always stay with you
+              </p>
+            </div>
+
+            <div class="skill-item">
+              <img src="assets/image1.svg" alt="image icon" />
+              <p class="skill-title" data-i18n="skill-title-3">Retouch</p>
+              <p data-i18n="skill-text-3">
+                I strive to make photography surpass reality
+              </p>
+            </div>
+
+            <div class="skill-item">
+              <img src="assets/mic1.svg" alt="microphone icon" />
+              <p class="skill-title" data-i18n="skill-title-4">Audio</p>
+              <p data-i18n="skill-text-4">
+                Professional sounds recording for video, advertising, portfolio
+              </p>
+            </div>
           </div>
-
-          <div class="card_container convex" data-name="iris">
-            <img class="card_front" src="images/iris.png" alt="Iris flower"></img>
-            <img class="card_back"src="images/back.png" alt="Backside"></img>
+        </section>
+        <section class="section portfolio" id="portfolio">
+          <div class="section-title">
+            <h2 class="title" data-i18n="portfolio">Portfolio</h2>
           </div>
-
-          <div class="card_container convex" data-name="hibiscus">
-            <img class="card_front" src="images/hibiscus.png" alt="hibiscus flower"></img>
-            <img class="card_back"src="images/back.png" alt="Backside"></img>
+          <div class="content-container">
+            <div class="portfolio-btns">
+              <button
+                class="transparent pulse black"
+                data-season="winter"
+                data-i18n="winter"
+              >
+                Winter
+              </button>
+              <button
+                class="transparent pulse black"
+                data-season="spring"
+                data-i18n="spring"
+              >
+                Spring
+              </button>
+              <button
+                class="transparent pulse black"
+                data-season="summer"
+                data-i18n="summer"
+              >
+                Summer
+              </button>
+              <button
+                class="transparent pulse pressed black"
+                data-season="autumn"
+                data-i18n="autumn"
+              >
+                Autumn
+              </button>
+            </div>
+            <div class="portfolio-content">
+              <img
+                class="portfolio-item"
+                src="assets/portfolio-items/autumn/1.jpg"
+                alt="portfolio foto 1"
+              />
+              <img
+                class="portfolio-item"
+                src="assets/portfolio-items/autumn/2.jpg"
+                alt="portfolio foto 1"
+              />
+              <img
+                class="portfolio-item"
+                src="assets/portfolio-items/autumn/3.jpg"
+                alt="portfolio foto 1"
+              />
+              <img
+                class="portfolio-item"
+                src="assets/portfolio-items/autumn/4.jpg"
+                alt="portfolio foto 1"
+              />
+              <img
+                class="portfolio-item"
+                src="assets/portfolio-items/autumn/5.jpg"
+                alt="portfolio foto 1"
+              />
+              <img
+                class="portfolio-item"
+                src="assets/portfolio-items/autumn/6.jpg"
+                alt="portfolio foto 1"
+              />
+            </div>
           </div>
-          <div class="card_container convex" data-name="star">
-            <img class="card_front" src="images/star.png" alt="Star flower"></img>
-            <img class="card_back"src="images/back.png" alt="Backside"></img>
+        </section>
+        <section class="section video" id="video">
+          <div class="section-title">
+            <h2 class="title" data-i18n="video">Video</h2>
           </div>
-  
-            <div class="card_container convex" data-name="rose">
-              <img class="card_front" src="images/rose.png" alt="Rose flower"></img>
-              <img class="card_back"src="images/back.png" alt="Backside"></img>
+          <div class="content-container">
+            <div class="video-content">
+              <button class="play-btn"></button>
             </div>
-  
-            <div class="card_container convex" data-name="pion">
-              <img class="card_front" src="images/pion.png" alt="Pion flower"></img>
-              <img class="card_back"src="images/back.png" alt="Backside"></img>
-            </div>
-  
-            <div class="card_container convex" data-name="lilia">
-              <img class="card_front" src="images/lilia.png" alt="Lilia flower"></img>
-              <img class="card_back"src="images/back.png" alt="Backside"></img>
-            </div>
-  
-            <div class="card_container convex" data-name="iris">
-              <img class="card_front" src="images/iris.png" alt="Iris flower"></img>
-              <img class="card_back"src="images/back.png" alt="Backside"></img>
-            </div>
-  
-            <div class="card_container convex" data-name="hibiscus">
-              <img class="card_front" src="images/hibiscus.png" alt="hibiscus flower"></img>
-              <img class="card_back"src="images/back.png" alt="Backside"></img>
+          </div>
+        </section>
+        <section class="section price" id="price">
+          <div class="section-title">
+            <h2 class="title" data-i18n="price">Price</h2>
+          </div>
+          <div class="content-container">
+            <div class="price-item">
+              <p class="price-title">Standard</p>
+              <p>500 $</p>
+              <p data-i18n="price-description-1-p1">One location</p>
+              <p data-i18n="price-description-1-p2">120 photos in color</p>
+              <p data-i18n="price-description-1-p3">12 photos in retouch</p>
+              <p data-i18n="price-description-1-p4">Readiness 2-3 weeks</p>
+              <p data-i18n="price-description-1-p5">Make up, visage</p>
+              <button class="golden pulse black" data-i18n="order">
+                Order shooting
+              </button>
             </div>
 
-            <div class="win_container convex">
-              <div class="congrats">
-                <img src="assets/congrats_flowr.png" alt="Congratulation!">
-                <p>Done!</p>
-                <p class="result"></p>
-                <p>Do you want to play again?</p>
-              </div>
-              <div class="continue_btns">
-              <button class="play_again control_btn ">Play again</button>
-              <button class="no control_btn cancel_btn">Cancel</button>
-              </div>
-              
-            </div>
-            <div class="score_container convex">
-              <p>Latest achievements</p>
-              <ul class="ach_list">
-                
-              </ul>
-              
-              <button class="no control_btn">Close</button>
+            <div class="price-item">
+              <p class="price-title">Premium</p>
+              <p>700 $</p>
+              <p data-i18n="price-description-2-p1">One or two locations</p>
+              <p data-i18n="price-description-2-p2">200 photos in color</p>
+              <p data-i18n="price-description-2-p3">20 photos in retouch</p>
+              <p data-i18n="price-description-2-p4">Readiness 1-2 weeks</p>
+              <p data-i18n="price-description-2-p5">Make up, visage</p>
+              <button class="golden pulse black" data-i18n="order">
+                Order shooting
+              </button>
             </div>
 
-
-
-      </div>          
-     
-      
-    </main>
-    <footer>
-      <div class="left_footer">
-        <span>2022 ©</span>
-        <a href="https://github.com/ekalape/rsschool-cv" class="github_link"
-          >GitHub</a
-        >
-      </div>
-      <a href="https://rs.school/js-stage0/" class="rss_link"
-        ><img src="assets/rs_school_js.svg" alt="Rsschool"
-      /></a>
-    </footer>
-    <script src="script.js"></script>
+            <div class="price-item">
+              <p class="price-title">Gold</p>
+              <p>1000 $</p>
+              <p data-i18n="price-description-3-p1">Three locations or more</p>
+              <p data-i18n="price-description-3-p2">300 photos in color</p>
+              <p data-i18n="price-description-3-p3">50 photos in retouch</p>
+              <p data-i18n="price-description-3-p4">Readiness 1 week</p>
+              <p data-i18n="price-description-3-p5">
+                Make up, visage, hairstyle
+              </p>
+              <button class="golden pulse black" data-i18n="order">
+                Order shooting
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="section contacts" id="contacts">
+          <div class="content-container withLight">
+            <form action="#">
+              <h2 class="title-contact" data-i18n="contact-me">Contact me</h2>
+              <input
+                type="email"
+                class="input-text"
+                id="mail"
+                placeholder="E-mail"
+                data-i18n="mail"
+              />
+              <input
+                type="tel"
+                class="input-text"
+                id="phone"
+                placeholder="Phone"
+                data-i18n="phone"
+              />
+              <textarea
+                id="message"
+                class="input-text"
+                placeholder="Message"
+                data-i18n="mess"
+              ></textarea>
+              <button
+                class="golden pulse white"
+                onclick="return false;"
+                data-i18n="send-message"
+              >
+                Send message
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div>
+          <span>©</span>
+          <span>2022</span>
+          <a id="github" href="https://github.com/ekalape">github</a>
+        </div>
+        <div>
+          <a href="https://rs.school/js-stage0/"> Rolling Scopes School</a>
+        </div>
+        <nav>
+          <ul>
+            <li id="insta">
+              <a href="https://www.instagram.com">
+                <img
+                  src="assets/inst1.svg"
+                  alt="Instagram link"
+                  data-icon="insta"
+                />
+              </a>
+            </li>
+            <li id="fb">
+              <a href="https://www.facebook.com"
+                ><img src="assets/fb1.svg" alt="Facebook link" data-icon="fb"
+              /></a>
+            </li>
+            <li id="twitter">
+              <a href="https://twitter.com/home">
+                <img src="assets/tw1.svg" alt="Twitter link" data-icon="tw" />
+              </a>
+            </li>
+            <li id="pinterest">
+              <a href="https://www.pinterest.com/">
+                <img
+                  src="assets/pinterest1.svg"
+                  alt="Pinterest link"
+                  data-icon="pinterest"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
